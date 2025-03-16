@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="YonoControl.ControlApp.Titlebar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:YonoControl.ControlApp"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/YonoThemes;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border 
+        x:Name="borderHeader"
+        Height="35"
+        Background="{StaticResource FrameBrush}" 
+        BorderThickness="0 0 0 1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                Grid.Column="0"
+                Source="/YonoControl;component/Resources/Images/Logo_Y.ico"
+                Height="16"
+                Width="16"
+                Margin="10 9 5 0"
+                Stretch="UniformToFill"
+                VerticalAlignment="Top"
+                MouseDown="Icon_Click"/>
+            <Menu  
+                Grid.Column="1"
+                Background="Transparent"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center">
+                <MenuItem Header="File1">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="Open" />
+                    <MenuItem Header="Save" />
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Undo" />
+                    <MenuItem Header="Redo" />
+                </MenuItem>
+
+            </Menu>
+            <StackPanel
+                Orientation="Horizontal"
+                Grid.Column="2"
+                VerticalAlignment="Top"
+                Height="20"
+                Margin="0 7 0 0"
+                HorizontalAlignment="Left">
+                <Separator Style="{StaticResource VerticalSeparator}"/>
+                <TextBlock 
+                    VerticalAlignment="Center"
+                    Text="Yono"/>
+            </StackPanel>
+            <Button
+                Grid.Column="3"
+                Style="{StaticResource IconButtonStyle}"
+                VerticalAlignment="Top"
+                Margin="0 7 0 0"
+                Height="20"
+                Tag="&#xE77B;"
+                Content="Đăng nhập"/>
+            <StackPanel Grid.Column="4" 
+                        Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right">
+                <Button x:Name="MinimizeButton" 
+                        Content="&#xE921;"
+                        Style="{StaticResource BtnTitlebarSt}"
+                        Click="MinimizeButton_Click">
+                </Button>
+                <Button x:Name="MaximizeRestoreButton" 
+                        Content="&#xE922;" 
+                        Style="{StaticResource BtnTitlebarSt}"
+                        Click="MaximizeRestoreButton_Click">
+                </Button>
+                <Button x:Name="CloseButton" 
+                        Content="&#xE8BB;" 
+                        Style="{StaticResource BtnTitlebarCloseSt}" 
+                        Click="CloseButton_Click">
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+</UserControl>
