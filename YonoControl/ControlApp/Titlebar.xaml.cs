@@ -25,6 +25,7 @@ namespace YonoControl.ControlApp
         {
             InitializeComponent();
             this.MouseDown += TitleBar_MouseDown;
+            Loaded += CustomTitleBar_Loaded;
         }
 
         private bool isSystemMenuOpen = false;
@@ -117,17 +118,32 @@ namespace YonoControl.ControlApp
             }
 
 
+        }
+
+        private void CustomTitleBar_Loaded(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this); // Lấy window chứa TitleBar
             if (window != null)
             {
-                if (window.WindowState == WindowState.Maximized)
-                {
-                    MaximizeRestoreButton.Content = "\uE922";
-                }
-                else
-                {
-                    MaximizeRestoreButton.Content = "\uE923";
-                }
+                window.StateChanged += Window_StateChanged;
+                UpdateRestoreButton(); // Cập nhật icon khi khởi động
             }
+        }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            UpdateRestoreButton();
+        }
+
+        private void UpdateRestoreButton()
+        {
+            Window window = Window.GetWindow(this);
+            if (window == null) return;
+
+            if (window.WindowState == WindowState.Maximized)
+                MaximizeRestoreButton.Content = "\uE923";
+            else
+                MaximizeRestoreButton.Content = "\uE922";
         }
         // End icon click
 

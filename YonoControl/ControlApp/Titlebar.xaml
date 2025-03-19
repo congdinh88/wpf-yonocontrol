@@ -39,14 +39,15 @@
                 Background="Transparent"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center">
-                <MenuItem Header="File1">
-                    <MenuItem Header="New" />
-                    <MenuItem Header="Open" />
-                    <MenuItem Header="Save" />
+                <MenuItem Header="Thêm mới">
+                    <MenuItem Header="Match"/>
+                    <MenuItem Header="Player"/>
                 </MenuItem>
-                <MenuItem Header="Edit">
-                    <MenuItem Header="Undo" />
-                    <MenuItem Header="Redo" />
+
+                <MenuItem Header="Cập nhập">
+                    <MenuItem Header="Ghi bàn" />
+                    <MenuItem Header="Thẻ vàng" />
+                    <MenuItem Header="Thẻ đỏ" />
                 </MenuItem>
 
             </Menu>

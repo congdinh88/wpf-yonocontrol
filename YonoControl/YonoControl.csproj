@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\YonoThemes\YonoThemes\YonoThemes.csproj" />
+    <ProjectReference Include="..\..\wpf-yonothemes\YonoThemes\YonoThemes.csproj" />
   </ItemGroup>
 
   <ItemGroup>

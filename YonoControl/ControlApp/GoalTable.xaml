@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="YonoControl.ControlApp.GoalTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:YonoControl.ControlApp"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/YonoThemes;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid
+        Margin="0 0 0 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Grid.Row="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="Test"/>
+        <TabControl 
+            Grid.Row="1"
+            TabStripPlacement="Bottom"
+            >
+            <TabItem Header="Chi tiết">
+                <DataGrid 
+                    x:Name="dataGrid"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource DataGridSt}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100"/>
+                        <DataGridTextColumn Header="Team" Binding="{Binding Team}" Width="300"/>
+                        <DataGridTextColumn Header="Goals" Binding="{Binding Goals}" Width="100"/>
+                        <DataGridTextColumn Header="Possition" Binding="{Binding Possition}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <StackPanel
+            Grid.Row="2"
+            Orientation="Horizontal"
+            VerticalAlignment="Bottom">
+            <Button
+                Style="{StaticResource BtnOutlineSt}"
+                Width="90"
+                Height="30"
+                Margin="5"
+                Content="Lưu"/>
+            <Button
+                Style="{StaticResource BtnOutlineSt}"
+                Width="90"
+                Height="30"
+                Margin="5"
+                Content="Hủy"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
