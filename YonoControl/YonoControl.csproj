@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\wpf-yonothemes\YonoThemes\YonoThemes.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\Images\Logo_Y.ico" />
   </ItemGroup>
 

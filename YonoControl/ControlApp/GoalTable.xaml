@@ -32,6 +32,7 @@
                 <DataGrid 
                     x:Name="dataGrid"
                     VerticalAlignment="Top"
+                    VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
                     Style="{StaticResource DataGridSt}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100"/>
